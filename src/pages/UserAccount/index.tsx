@@ -45,7 +45,7 @@ export function UserAccount(){
         },
         {
             id: 5,
-            rating: 90,
+            rating: null,
             thumbFile: gameThumb05
         },
         {
@@ -111,7 +111,7 @@ export function UserAccount(){
                                 <img src={game.thumbFile} />
                             </ThumbGameContainer>
                             <footer>
-                                <span>{game.rating}/100</span>
+                                <span>{game.rating ? `${game.rating}/100` : "Adicionar Avaliação" }</span>
                             </footer>
                         </GameContainer>
                     ))

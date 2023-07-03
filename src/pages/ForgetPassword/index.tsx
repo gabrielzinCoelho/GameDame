@@ -1,9 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ButtonSubmit, FooterContainer, ForgetPasswordContainer, InputEmail } from "./styles";
 import { ArrowRight } from "phosphor-react";
 import { useState } from "react";
 
 export function ForgetPassword(){
+
+    const navigate = useNavigate();
 
     const [inputEmailValue, setInputEmailValue ] = useState("");
 
@@ -18,6 +20,7 @@ export function ForgetPassword(){
 
     function handleForgetPasswordSubmit(event: React.FormEvent<HTMLFormElement>){
         event.preventDefault();
+        navigate("/");
     }
 
     return (

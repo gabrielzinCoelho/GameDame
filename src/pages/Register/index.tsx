@@ -1,9 +1,11 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ButtonSubmit, FooterContainer, InputRegister, RegisterContainer } from "./styles";
 import { ArrowRight } from "phosphor-react";
 import { useState } from "react";
 
 export function Register(){
+
+    const navigate = useNavigate();
 
     const [inputNameValue, setInputNameValue ] = useState("");
     const [inputEmailValue, setInputEmailValue ] = useState("");
@@ -21,6 +23,7 @@ export function Register(){
             setInputConfirmPasswordValue("");
             return;
         }
+        navigate("/");
     }
 
     function handleInputEmailChange(event: React.ChangeEvent<HTMLInputElement>){

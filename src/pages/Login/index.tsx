@@ -1,9 +1,11 @@
 import { ArrowRight } from "phosphor-react";
 import { ButtonSubmit, FooterContainer, InputLogin, LoginContainer } from "./styles";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export function Login(){
+
+    const navigate = useNavigate();
 
     const [inputEmailValue, setInputEmailValue ] = useState("");
 
@@ -25,6 +27,7 @@ export function Login(){
 
     function handleLoginUser(event: React.FormEvent<HTMLFormElement>){
         event.preventDefault();
+        navigate("/GameDame");
     }
 
     return (
