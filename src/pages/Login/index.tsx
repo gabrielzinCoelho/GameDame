@@ -56,7 +56,7 @@ export function Login(){
             </form>
             <FooterContainer>
                 <NavLink to="/registrar">Criar Conta</NavLink>
-                <NavLink to="/recuperarSenha">Esqueceu a Senha?</NavLink>
+                <NavLink to="/recuperar-senha">Esqueceu a Senha?</NavLink>
             </FooterContainer>
         </LoginContainer>
     );    
