@@ -16,7 +16,7 @@ export function Router(){
                 <Route path="/recuperar-senha" element={<ForgetPassword />} />
             </Route>
             <Route path="/GameDame" element={<DefaultLayout />}>
-                <Route path="/GameDame/" element={<GameShop />}/>
+                <Route path="/GameDame/:gameCategory" element={<GameShop />}/>
                 <Route path="/GameDame/minha-conta" element={<UserAccount />}/>
             </Route>
         </Routes>

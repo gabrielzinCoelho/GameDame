@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import { DefaultLayoutContainer, HeaderContainer, InputContainer, NavContainer } from "./styles";
 
 import menuLogo from '../../assets/menuLogo.svg'
@@ -10,15 +10,25 @@ export function DefaultLayout(){
             <HeaderContainer>
                 <img src={menuLogo} />
                 <NavContainer>
-                    <h1>Lançamentos</h1>
+                    <NavLink to="/GameDame/Lançamentos">
+                        <h1>Lançamentos</h1>
+                    </NavLink>
                     <h1>|</h1>
-                    <h1>Populares</h1>
+                    <NavLink to="/GameDame/Populares">
+                        <h1>Populares</h1>
+                    </NavLink>
                     <h1>|</h1>
-                    <h1>Gêneros</h1>
+                    <NavLink to="/GameDame/Gêneros">
+                        <h1>Gêneros</h1>
+                    </NavLink>
                     <h1>|</h1>
-                    <h1>Promoções</h1>
+                    <NavLink to="/GameDame/Promoções">
+                        <h1>Promoções</h1>
+                    </NavLink>
                     <h1>|</h1>
-                    <h1>Conta</h1>
+                    <NavLink to="/GameDame/minha-conta">
+                        <h1>Conta</h1>
+                    </NavLink>
                 </NavContainer>
                 <InputContainer>
                     <input id="search" />
