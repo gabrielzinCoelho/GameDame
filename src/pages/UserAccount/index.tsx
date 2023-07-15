@@ -1,6 +1,7 @@
 import { PencilSimple, ShoppingCartSimple, TrashSimple, User } from "phosphor-react";
 import { ButtonContainer, GameContainer, GameListContainer, ThumbGameContainer, UserAccountContainer, UserDataContainer, UserGamesContainer } from "./styles";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import { ShowUserData } from "./ShowUserData";
 import { ShowUserForm } from "./ShowUserForm";
@@ -106,14 +107,16 @@ export function UserAccount(){
 
                 {
                     userGames.map(game => (
-                        <GameContainer key={game.id}>
-                            <ThumbGameContainer>
-                                <img src={game.thumbFile} />
-                            </ThumbGameContainer>
-                            <footer>
-                                <span>{game.rating ? `${game.rating}/100` : "Adicionar Avaliação" }</span>
-                            </footer>
-                        </GameContainer>
+                        <NavLink to={`/GameDame/jogos/${game.id}`}>
+                            <GameContainer key={game.id}>
+                                <ThumbGameContainer>
+                                    <img src={game.thumbFile} />
+                                </ThumbGameContainer>
+                                <footer>
+                                    <span>{game.rating ? `${game.rating}/100` : "Adicionar Avaliação" }</span>
+                                </footer>
+                            </GameContainer>
+                        </NavLink>
                     ))
                 }
 

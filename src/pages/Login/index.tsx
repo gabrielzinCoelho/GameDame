@@ -27,7 +27,7 @@ export function Login(){
 
     function handleLoginUser(event: React.FormEvent<HTMLFormElement>){
         event.preventDefault();
-        navigate("/GameDame");
+        navigate("/GameDame/Lançamentos");
     }
 
     return (

@@ -36,45 +36,53 @@ export const UserDescriptionContainer = styled.div`
     }
 `;
 
-export const BaseInput = styled.input`
+export const BaseInputContainer = styled.div`
 
     flex: 1;
+    display: flex;
 
-    margin: 0 1rem;
-    background: transparent;
-    border: 0;
-    border-bottom: 0.2rem solid ${props => props.theme["blue-gray-700"]};
-    padding: 0.5rem 0.5rem;
-    color: ${props => props.theme["blue-gray-700"]};
+    input{
+        flex: 1;
 
-    &:focus{
-        box-shadow: none;
-    }
+        margin: 0 1rem;
+        background: transparent;
+        border: 0;
+        border-bottom: 0.2rem solid ${props => props.theme["blue-gray-700"]};
+        padding: 0.5rem 0.5rem;
+        color: ${props => props.theme["blue-gray-700"]};
 
-    &::placeholder{
-        color: ${props => props.theme["blue-gray-200"]};
-        text-align: center;
+        &:focus{
+            box-shadow: none;
+        }
+
+        &::placeholder{
+            color: ${props => props.theme["blue-gray-200"]};
+            text-align: center;
+        }
     }
 `;
 
-export const InputUserData = styled(BaseInput)`
+export const InputUserNameContainer = styled(BaseInputContainer)`
 
-    height: 2rem;
-    font-weight: 400;
-    font-size: 2rem;
+    input{
+        height: 3rem;
+        font-weight: 500;
+        font-size: 3rem;
+
+        &::placeholder{
+            font-weight: 400;
+            font-size: 2rem;
+        }
+    }
 `;
 
-export const InputUserName = styled(BaseInput)`
+export const InputUserDataContainer = styled(BaseInputContainer)`
 
-    height: 3rem;
-    font-weight: 500;
-    font-size: 3rem;
-
-    &::placeholder{
+    input{
+        height: 2rem;
         font-weight: 400;
         font-size: 2rem;
     }
-
 `;
 
 export const ButtonContainer = styled.div`

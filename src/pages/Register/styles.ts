@@ -25,25 +25,32 @@ export const RegisterContainer = styled.div`
     }
 `;
 
-export const InputRegister = styled.input`
-    background: ${props => props.theme["gray-300"]};
-    border: 0;
-    border-radius: 4px;
-    box-shadow: 0 4px 20px 0 ${props => props.theme["blue-gray-200"]};
-    
+export const InputRegister = styled.div`
+
+    flex: 1;
     width: 100%;
-    height: 3rem;
+    
+    input{
+        background: ${props => props.theme["gray-300"]};
+        border: 0;
+        border-radius: 4px;
+        box-shadow: 0 4px 20px 0 ${props => props.theme["blue-gray-200"]};
+        
+        width: 100%;
+        height: 3rem;
 
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-weight: 300;
-    color: ${props => props.theme["blue-gray-700"]};
+        padding: 1rem;
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: ${props => props.theme["blue-gray-700"]};
 
-    &::placeholder{
-        color: ${props => props.theme["blue-gray-200"]};
+        &::placeholder{
+            color: ${props => props.theme["blue-gray-200"]};
+        }
     }
 
 `;
+
 
 export const ButtonSubmit = styled.button`
     border: 0;

@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { ButtonSubmit, FooterContainer, InputRegister, RegisterContainer } from "./styles";
 import { ArrowRight } from "phosphor-react";
 import { useState } from "react";
+import CpfCnpj from "@react-br-forms/cpf-cnpj-mask";
 
 export function Register(){
 
@@ -9,7 +10,9 @@ export function Register(){
 
     const [inputNameValue, setInputNameValue ] = useState("");
     const [inputEmailValue, setInputEmailValue ] = useState("");
+
     const [inputCpfValue, setInputCpfValue ] = useState("");
+
     const [inputPasswordValue, setInputPasswordValue ] = useState("");
     const [inputConfirmPasswordValue, setInputConfirmPasswordValue ] = useState("");
 
@@ -56,44 +59,55 @@ export function Register(){
         <RegisterContainer>
             <h1>Registrar</h1>
             <form onSubmit={handleRegisterSubmit}>
-                <InputRegister
-                    placeholder="Nome de usuário"
-                    required
-                    onInvalid={ (event: React.FormEvent<HTMLInputElement>)=>handleInvalidInput("Informe um nome válido", event) }
-                    value={inputNameValue}
-                    onChange={handleInputNameChange}
-                />
-                <InputRegister
-                    placeholder="E-mail"
-                    required
-                    type="email"
-                    onInvalid={ (event: React.FormEvent<HTMLInputElement>)=>handleInvalidInput("Informe um email válido", event) }
-                    value={inputEmailValue}
-                    onChange={handleInputEmailChange}
-                />
-                <InputRegister
-                    placeholder="CPF"
-                    required
-                    onInvalid={ (event: React.FormEvent<HTMLInputElement>)=>handleInvalidInput("Informe um CPF válido", event) }
-                    value={inputCpfValue}
-                    onChange={handleInputCpfChange}
-                />
-                <InputRegister
-                    placeholder="Senha"
-                    required
-                    type="password"
-                    onInvalid={ (event: React.FormEvent<HTMLInputElement>)=>handleInvalidInput("Informe uma senha válida", event) }
-                    value={inputPasswordValue}
-                    onChange={handleInputPasswordChange}
-                />
-                <InputRegister
-                    placeholder="Confirmar Senha"
-                    required
-                    type="password"
-                    onInvalid={ (event: React.FormEvent<HTMLInputElement>)=>handleInvalidInput("Confirme a senha corretamente", event) }
-                    value={inputConfirmPasswordValue}
-                    onChange={handleInputConfirmPasswordChange}
-                />
+                <InputRegister>
+                    <input 
+                        placeholder="Nome de usuário"
+                        required
+                        onInvalid={ (event: React.FormEvent<HTMLInputElement>)=>handleInvalidInput("Informe um nome válido", event) }
+                        value={inputNameValue}
+                        onChange={handleInputNameChange}
+                    />
+                </InputRegister>
+                <InputRegister>
+                    <input
+                        placeholder="E-mail"
+                        required
+                        type="email"
+                        onInvalid={ (event: React.FormEvent<HTMLInputElement>)=>handleInvalidInput("Informe um email válido", event) }
+                        value={inputEmailValue}
+                        onChange={handleInputEmailChange}
+                    />
+                </InputRegister>
+                <InputRegister>
+                    <CpfCnpj
+                        placeholder="CPF"
+                        required
+                        onInvalid={ (event: React.FormEvent<HTMLInputElement>)=>handleInvalidInput("Informe um CPF válido", event) }
+                        maxlength={14}
+                        value={inputCpfValue}
+                        onChange={handleInputCpfChange}
+                    />
+                </InputRegister>
+                <InputRegister>
+                    <input 
+                         placeholder="Senha"
+                         required
+                         type="password"
+                         onInvalid={ (event: React.FormEvent<HTMLInputElement>)=>handleInvalidInput("Informe uma senha válida", event) }
+                         value={inputPasswordValue}
+                         onChange={handleInputPasswordChange}
+                    />
+                </InputRegister>
+                <InputRegister>
+                    <input 
+                        placeholder="Confirmar Senha"
+                        required
+                        type="password"
+                        onInvalid={ (event: React.FormEvent<HTMLInputElement>)=>handleInvalidInput("Confirme a senha corretamente", event) }
+                        value={inputConfirmPasswordValue}
+                        onChange={handleInputConfirmPasswordChange}
+                    />
+                </InputRegister>
                 <ButtonSubmit 
                     type="submit"
                     disabled={

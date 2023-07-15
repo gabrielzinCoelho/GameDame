@@ -7,8 +7,8 @@ export function CarouselGameSlide({games} : {games : GameType[]}){
         <CarouselGameSlideContainer>
 
             <FirstSectionSlideContainer>
-                <CarouselGameItem game={games[0]} minorItem />
-                <CarouselGameItem game={games[1]} minorItem />
+                <CarouselGameItem game={games[0]} minorItem={true} />
+                <CarouselGameItem game={games[1]} minorItem={true} />
             </FirstSectionSlideContainer>
 
             <SecondSectionSlideContainer>

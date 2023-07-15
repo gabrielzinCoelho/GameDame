@@ -1,6 +1,13 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+
+    @media(max-width: 768px){
+        html{
+            font-size: 87.5%;
+        }
+    }
+
     *{
         margin: 0;
         padding: 0;

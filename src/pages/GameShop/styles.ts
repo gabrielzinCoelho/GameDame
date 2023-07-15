@@ -17,6 +17,7 @@ export const CarouselGameItemContainer = styled.div<{minorItem: boolean}>`
     overflow: hidden;
     object-fit: cover;
     position: relative;
+    cursor: pointer;
 
     border: 2px solid ${props => props.theme["blue-gray-200"]};
     border-collapse: collapse;

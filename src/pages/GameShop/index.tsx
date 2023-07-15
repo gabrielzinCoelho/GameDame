@@ -28,8 +28,7 @@ import thumbFile9 from '../../assets/thumbGames/game09.jpg'
 import thumbFile10 from '../../assets/thumbGames/game10.jpg'
 import thumbFile11 from '../../assets/thumbGames/game11.jpg'
 import thumbFile12 from '../../assets/thumbGames/game12.jpg'
-
-import { useParams } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export type GameType = {
     id: number,
@@ -39,13 +38,20 @@ export type GameType = {
     salePercent: number
 };
 
-export type GameCategory = "Lançamentos" | "Populares" | "Gêneros" | "Promoções";
+interface GameShopProps {
+    gameCategory: "Lançamentos" | "Populares" | "Gêneros" | "Promoções"
+}
 
-export function GameShop(){
+export function GameShop({gameCategory} : GameShopProps){
 
-    const {gameCategory} = useParams();
+    type GamesByCategory = {
+        "Lançamentos" : number[],
+        "Populares": number[],
+        "Gêneros": number[],
+        "Promoções": number[],
+    }
 
-    const games = [
+    const games : GameType[]= [
         {
             id: 1,
             thumbFile: thumbFile1,
@@ -162,15 +168,17 @@ export function GameShop(){
                 <GameListContainer>
 
                 {
-                    gamesByCategory[gameCategory].map(gameId => (
-                        <GameContainer key={gameId}>
-                            <ThumbGameContainer>
-                                <img src={games[gameId - 1].thumbFile} />
-                            </ThumbGameContainer>
-                            <footer>
-                                <span>{`R$ ${games[gameId - 1].price}`}</span>
-                            </footer>
-                        </GameContainer>
+                    gamesByCategory[gameCategory!].map(gameId => (
+                        <NavLink to={`/GameDame/jogos/${gameId}`}>
+                            <GameContainer key={gameId}>
+                                <ThumbGameContainer>
+                                    <img src={games[gameId - 1].thumbFile} />
+                                </ThumbGameContainer>
+                                <footer>
+                                    <span>{`R$ ${games[gameId - 1].price}`}</span>
+                                </footer>
+                            </GameContainer>
+                        </NavLink>
                     ))
                 }
 
